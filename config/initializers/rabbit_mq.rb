@@ -11,7 +11,7 @@ ch = conn.create_channel
 q  = ch.queue("bunny.examples.hello_world", :auto_delete => true)
 
 q.subscribe do |delivery_info, metadata, payload|
-  OrderCount.first.tap{ |x| x.update_attributes(number: x.number+1)}
+  OrderCount.first.update_attributes(number: payload.to_i)
   puts "Received #{payload}"
 end
 
