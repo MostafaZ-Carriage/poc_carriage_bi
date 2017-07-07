@@ -3,5 +3,4 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   root to: 'order_counts#order_count'
   get 'get_order_count' => 'order_counts#get_order_count'
-  get 'update_order/:number' => 'order_counts#update_order'
 end
