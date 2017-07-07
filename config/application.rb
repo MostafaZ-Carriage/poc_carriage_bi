@@ -27,6 +27,7 @@ module PocCarriageBi
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.action_cable.allowed_request_origins = ['http://0.0.0.0:3000']
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'

@@ -7,13 +7,6 @@
 //= require_self
 //= require_tree .
 
-this.App = {};
+//this.App = {};
 
-App.cable = ActionCable.createConsumer();
-
-App.messages = App.cable.subscriptions.create('OrderCountChannel', {
-    received: function(data) {
-        console.log(data);
-        return data;
-    }
-});
+//App.cable = ActionCable.createConsumer();
