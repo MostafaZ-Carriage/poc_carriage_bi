@@ -4,7 +4,11 @@ require "bunny"
 
 STDOUT.sync = true
 
-conn = ENV['RABBIT_MQ_URL'] || Bunny.new
+if ENV['RABBIT_MQ_URL']
+  conn = Bunny.new ENV['RABBIT_MQ_URL']
+else
+  conn = Bunny.new
+end
 conn.start
 
 ch = conn.create_channel
