@@ -161,8 +161,10 @@ production:
     default:
       database: poc_carriage_bi_production
       hosts:
-        - <%= ENV["MONGO_LAB_URL"] ||  'localhAost:27017' %>
+        - <%= ENV["MONGO_LAB_HOST"] ||  'localhost:27017' %>
       options:
         read:
           mode: :primary
         max_pool_size: 1
+        user: <%= ENV['MONGO_LAB_USER'] %>
+        password: <%= ENV['MONGO_LAB_PASS'] %>
