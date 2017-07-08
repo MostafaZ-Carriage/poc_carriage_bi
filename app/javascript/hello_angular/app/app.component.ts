@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { OrderCountService } from './order_count.service';
 import { Ng2Cable, Broadcaster } from 'ng2-cable';
+import templateString from './template.html'
 
 @Component({
   selector: 'hello-angular',
-  template: `<h1>{{number}}</h1>`
+  template: templateString,
 })
 export class AppComponent {
   number = {};
