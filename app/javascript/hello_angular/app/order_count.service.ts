@@ -13,7 +13,7 @@ export class OrderCountService {
     ) {}
 
     getNumber() {
-        return this.http.get(`http://localhost:3000/get_order_count`)
+        return this.http.get(`https://poc-bi.herokuapp.com/get_order_count`)
             .map(this.extractData);
     }
 

@@ -9,7 +9,7 @@ import { Ng2Cable, Broadcaster } from 'ng2-cable';
 export class AppComponent {
   number = {};
   constructor(orderCountService: OrderCountService,private ng2cable: Ng2Cable, private broadcaster: Broadcaster) {
-    this.ng2cable.subscribe('ws://localhost:3000/cable', 'OrderCountChannel');
+    this.ng2cable.subscribe('ws://poc-bi.herokuapp.com//cable', 'OrderCountChannel');
     //By default event name is 'channel name'. But you can pass from backend field { action: 'MyEventName'}
 
     this.broadcaster.on<string>('OrderCountChannel').subscribe(
