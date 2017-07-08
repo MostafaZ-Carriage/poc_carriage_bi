@@ -161,7 +161,7 @@ production:
     default:
       database: poc_carriage_bi_production
       hosts:
-        - <%= ENV["MONGO_LAB_URL"] ||  localhAost:27017 %>
+        - <%= ENV["MONGO_LAB_URL"] ||  'localhAost:27017' %>
       options:
         read:
           mode: :primary
